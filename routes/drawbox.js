@@ -8,7 +8,7 @@ const baseUrl = 'https://brillcheese.com/';
 
 function handleButtonInteraction(interaction) {
     console.log("interaction logged PENIS")
-    if (!interaction.member.roles.cache.some(r => r.name === 'Fleet Admiral')){
+    if (!interaction.member.roles.cache.some(r => r.name === 'Owner')){
         const file = new AttachmentBuilder('http://brillcheese.com/images/nuhuh.webp');
         
         interaction.reply({ content: 'You do not have hte necessary roles required to verify/delete drawbox submissions.',files: [file], ephemeral: true });
@@ -21,11 +21,11 @@ function handleButtonInteraction(interaction) {
         const newFilePath = filePath.replace('_unv', '');
         fs.renameSync(filePath, newFilePath); 
         interaction.reply({ content: 'Image verified!', ephemeral: true });
-
+        const newFileUrl = fileUrl.replace('_unv', '');
         interaction.message.edit({
             embeds: [new EmbedBuilder()
                 .setTitle('A new drawing has been submitted :3')
-                .setImage(fileUrl)
+                .setImage(newFileUrl)
                 .setColor('#00FF00')
             ],
             components: []
@@ -37,7 +37,7 @@ function handleButtonInteraction(interaction) {
         interaction.message.edit({
             embeds: [new EmbedBuilder()
                 .setTitle('A new drawing has been submitted :3')
-                .setImage(fileUrl)
+                .setImage('https://brillcheese.com/images/drawbox/deletedimage.png')
                 .setColor('#FF0000')
             ],
             components: []

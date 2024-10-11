@@ -21,18 +21,49 @@ const client = new Client(
 const { token } = require('./config.json');
 
 const rolesMap = [
-    ["1275693275142946826", 
-        ["🟨", "Command"],
-        ["🟥", "Operations"],
-        ["🟦", "Sciences"],
-        ["🩻", "Medical"]
+    ["1282293434518081587", 
+        ["🟥", "Red"],
+        ["🟧", "Orange"],
+        ["🟨", "Yellow"],
+        ["🟩", "Green"],
+        ["🟦", "Blue"],
+        ["🟪", "Purple"],
+        ["🩷", "Pink"],
     ],
-    ["1275727908383490081",
+    ["1282293548913528925",
         ["🎮", "Gaming"],
-        ["🖖", "Trek"],
-        ["🎨", "Art"]
-    ]
+        ["🖖", "Scifi"],
+        ["🎨", "Art"],
+        ["💥", "Comics"],
+        ["🎬", "Movies"],
+        ["🎵", "Music"],
+        ["📟", "Programming"],
+        ["💻", "Tech"],
+    ],
+    ["1282294160153382912",
+        ["🌄", "she/her/hers"],
+        ["🌠", "he/him/his"],
+        ["🎆", "they/them/theirs"],
+        ["🌌", "any pronouns"],
+        ["🌇", "other pronouns"],
+    ],
+    ["1282298453933953096",
+        ["<:windows:1282300946893766687>", "Windows"],
+        ["<:mac:1282300967508775016>", "Mac"],
+        ["<:linux:1282301156839657534>", "Linux"],
+        ["<:debian:1282301511019528264>", "Debian based"],
+        ["<:arch:1282301508662329364>", "Arch based"],
+        ["<:fedora:1282301513829711872>", "Fedora"],
+        ["<:gentoo:1282302991679885323>", "Gentoo"],
+        ["<:opensuse:1282301675909939263>", "OpenSUSE"],
+    ],
+    ["1282300190958682142",
+        ["<:marvel:1282302673491595319>", "Team Marvel"],
+        ["<:DC:1282302678688333858>", "Team DC"],
+    ],
 ];
+
+
 
 client.once('ready', async () => {
     console.log(`Logged in as ${client.user.tag}!`);

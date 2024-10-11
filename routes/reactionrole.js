@@ -1,4 +1,4 @@
-async function handleReactionEvent(reaction, user, action, rolesMap){
+async function handleReactionEvent(reaction, user, action, rolesMap) {
     if (reaction.partial) {
         try {
             await reaction.fetch();
@@ -14,7 +14,7 @@ async function handleReactionEvent(reaction, user, action, rolesMap){
     const [_, ...emojiRolePairs] = rolesMap.find(([msgId]) => msgId === reactedmsgID) || [];
     const emojiRoleMap = new Map(emojiRolePairs);
 
-    const roleName = emojiRoleMap.get(reaction.emoji.name);
+    const roleName = emojiRoleMap.get(reaction.emoji.id ? `<:${reaction.emoji.name}:${reaction.emoji.id}>` : reaction.emoji.name);
 
     if (roleName) {
         const member = reaction.message.guild.members.cache.get(user.id);
